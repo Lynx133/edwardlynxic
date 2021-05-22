@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
+const prefix = "!"
 
 const client = new Discord.Client();
 
@@ -18,4 +18,4 @@ const embed = new Discord.MessageEmbed()
     guildMember.guild.channels.cache.get('839108013440237568').send(embed);
 });
 
- client.login(token);
+ client.login(proces.env.token);
