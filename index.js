@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 const prefix = "!"
 
-const client = new Discord.Client();
+const bot = new Discord.Client();
 
 const embed = new Discord.MessageEmbed()
 
-client.once('ready', () => {
+bot.on('ready', () => {
 	console.log('Void is Online!');
 });
 
-client.on('guildMemberAdd', guildMember =>{
+bot.on('guildMemberAdd', guildMember =>{
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Verify');
 const embed = new Discord.MessageEmbed()
 .setColor('#FF8000')
@@ -18,4 +18,4 @@ const embed = new Discord.MessageEmbed()
     guildMember.guild.channels.cache.get('839108013440237568').send(embed);
 });
 
- client.login(proces.env.token);
+ bot.login(proces.env.token);
